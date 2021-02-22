@@ -1,0 +1,105 @@
+@import '../../../../css/designSystem';
+
+.contact {
+	font-size: 0.9em;
+	padding: 0 20px;
+
+	&.active {
+		background: $lighter;
+		border-right: 5px solid $light;
+	}
+
+	.wrap {
+		height: 70px;
+		position: relative;
+		width: inherit;
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		cursor: pointer;
+
+		.imgWrap {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			overflow: hidden;
+			background: $white;
+
+			img {
+				width: 100%;
+			}
+
+			span {
+				position: absolute;
+				left: 0;
+				top: 15px;
+				margin: -2px 0 0 -2px;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				border: 2px solid $dark;
+				background: $gray;
+
+				&.online {
+					background: $green;
+				}
+
+				&.away {
+					background: $yellow;
+				}
+
+				&.busy {
+					background: $red;
+				}
+			}
+		}
+
+		.meta {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			width: calc(100% - 60px);
+
+			> * {
+				margin-bottom: 0;
+			}
+
+			.name {
+				font-size: 16px;
+			}
+
+			.preview {
+				font-size: 14px;
+				max-width: 100%;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+				span {
+					color: $white;
+
+					&.you {
+						color: $gray;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: $break) {
+			width: 100%;
+		}
+	}
+
+	&:hover {
+		background: $lighter;
+	}
+
+	&.active {
+		background: $lighter;
+		border-right: 5px solid $light;
+	}
+
+	@media screen and (max-width: $break) {
+		padding: 6px 0 46px 8px;
+	}
+}
